@@ -1,0 +1,35 @@
+<style>
+  {{asset "/Luky/Luky.css"}}
+</style>
+
+<div class="container">
+  <div class="box container1">
+    <img src="{{asset "/Luky/Slike/slika1.jpg" "dataURI"}}" />
+  </div>
+  <div class="box container2">{{PredlozakNaziv}}</div>
+  <div class="box container3">{{PredlozakTip}}</div>
+  <div class="box container4">{{PredlozakStatus}}</div>
+  <div class="box container5">{{PredlozakOznaka}}</div>
+  <div class="box container6">{{PredlozakIzdanje}}</div>
+  <div class="box container7">Odobrio: {{Odobrio}}</div>
+  <div class="box container8">Datum unosa:<br />{{DatumUnosa}}</div>
+  <div class="box container9">RBR prijave: {{RedniBrojPrijave}}</div>
+  <div class="box container10">Vrijednost: {{Vrijednost}}</div>
+  <div class="box container11">
+    <div>Obrazloženje</div>
+    {{Obrazlozenje}}
+  </div>
+</div>
+
+{{#each Ovjerivaci}}
+<div class="container_2">
+  <div class="box container-1">{{DatumOvjere}}</div>
+  <div class="box container-2">{{UserOvjerio}}</div>
+  <div class="box container-3">{{NazivOvjeraSudionikStatus}}</div>
+  <div class="box container-4">
+    {{#if (provjera PkOvjeraSudionikStatus 1)}} <img src="{{asset
+    "/Luky/Slike/dossier.png" "dataURI"}}" /> {{else}} <img src="{{asset
+    "/Luky/Slike/paper.png" "dataURI"}}" /> {{/if}}
+  </div>
+</div>
+{{/each}}
